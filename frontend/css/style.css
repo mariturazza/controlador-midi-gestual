@@ -98,10 +98,10 @@ footer {
 .nav-brand .logo {
 
     position: fixed;
-    top: 0;
+    top: 0.4em;
     left: 2em;
     width: 5.5em;
-    z-index: 11;
+    z-index: 1;
 
 }
 
