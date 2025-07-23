@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --header-height: 4.5em;
+
+    --first-text-color: #23227A;
+    --second-text-color: hsl(0, 0%, 8%);
+    --third-text-color:  hsl(0, 0%, 30%);
+
+    --background-color: #ffffff;
+    --background-color-v: #f7f7f7;
+    --background-color-contrast:hsl(0, 0%, 8%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Raleway', 'Roboto', sans-serif;
+    --biggest-font-size: 3rem;
+    --h1-biggest-font-size: 2rem;
+    --h1-font-size: 1.85rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .900rem;
+    --small-font-size: .815rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-small: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 800;
+
+    --line-height: 1.6;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+* { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button {
+    text-decoration: none;
+
+}
+
+header {
+    height: var(--header-height);
+}
+
+footer {
+    background-color: var(--background-footer-color);
+}
+
+.container {
+    padding: 0 8em;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2em 2em;
+
+    background-color: rgba(255, 255, 255, 0.479);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-brand {
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-brand .logo {
+
+    position: fixed;
+    top: 0;
+    left: 2em;
+    width: 5.5em;
+    z-index: 11;
+
+}
+
+.brand-title {
+    color: var(--second-text-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-left: 1.4em;
+    z-index: 10;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.menu li {
+    padding: 0 1em;
+}
+
+.menu li a {
+    color: var(--second-text-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: var(--first-text-color);
+    transition: 0.3s;
+}
+
+.nav-git {
+    display: flex;
+    justify-content: end;
+}
+
+.git{
+    display: inline-flex;
+    height: 100%;
+}
+
+.git-logo {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: var(--h1-font-size);
+    margin-right: 0.2em;
+    color: var(--first-text-color);
+    transition: 0.5s;
+}
+
+.git-logo:hover {
+    color: var(--second-text-color);
+    transition: 0.5s;
+}
+
+.git-url {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.url {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--first-text-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1px;
+    transition: 0.5s;
+}
+
+.url:hover {
+    color: var(--second-text-color);
+    transition: 0.5s;
+}
+
+.git-stats {
+    display: inline-flex;
+    color: var(--text-color);
+    align-items: center;
+    font-size: var(--smaller-font-size);
+    font-weight: 400;
+    margin-top: 1px;
+}
+
+.git-stats i {
+    margin-right: 0.2rem;
+    transition: 0.5s;
+}
+
+.git-stats:hover {
+    color: var(--second-color);
+    transition: 0.5s;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+}
+
+.sobre-section {
+    height: calc(95vh - 4.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-section h1 {
+    color: var(--second-text-color);
+    font: var(--body-font);
+    font-size: var(--h1-biggest-font-size);
+    font-weight: var(--font-semi-bold);
+
+    padding: 0em 0 1em 0;
+}
+
+.sobre-section .text {
+    color: var(--third-text-color);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+
+    padding: 0 0 2em 0;
+    width: 40em;
+    line-height: var(--line-height);
+}
+
+.sobre-section .button {
+    background-color: var(--first-text-color);
+    width: 20em;
+    border-radius: 2em;
+    cursor: pointer;
+}
+
+.sobre-section .button p a {
+    color: var(--background-color);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+
+    padding: 1em 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+.caracteristica-section {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 6em;
+}
+
+.caracteristica-section h1 {
+    color: var(--second-text-color);
+    font: var(--body-font);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+
+    text-align: center;
+    line-height: var(--line-height);
+}
+
+.caracteristica-section .blocos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+
+.caracteristica-section .blocos div{
+    width: 20em;
+} 
+
+.caracteristica-section .blocos div h2 {
+    color: var(--second-text-color);
+    font: var(--body-font);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+
+    padding-bottom: 1em;
+    text-align: center;
+    line-height: var(--line-height);
+}
+
+.caracteristica-section .blocos div p {
+    color: var(--third-text-color);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+
+    padding-bottom: 1em;
+    text-align: center;
+    line-height: var(--line-height);
+}
+
+.form-section {
+    height: 80vh;
+    background-color: var(--background-color-v);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section h1 {
+    margin-top: 4em;
+
+    color: var(--text-color);
+    font: var(--body-font);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+
+    text-align: center;
+    line-height: var(--line-height);
+}
