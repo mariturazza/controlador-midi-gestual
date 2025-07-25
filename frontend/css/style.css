@@ -221,6 +221,12 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background-image: url('../img/back1.png');
+    background-size: cover;
+    background-position: center;
+
+    margin: 0 8em;
 }
 
 .sobre-section h1 {
