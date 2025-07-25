@@ -145,55 +145,46 @@
 
         <section class="form-section">
             <div class="criativo">
-                <h1>Lorem.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Hic eveniet nobis nihil quisquam iure?</p>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
-                </select>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
-                </select>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
-                </select>
-                <div class="button" id="criativo">
+                <h1>Criativo</h1>
+                <p>No modo criativo, selecione um instrumento e uma escala para experimentar 
+                    livremente sons e combinações com seus gestos</p>
+                <div class="maos">
+                    <div id="mao-esquerda">
+                        <h3>Mão Esquerda</h3>
+                        <select name="InstrumentoEsquerda" id="instrumentos_esquerda">
+                            <option value="" disabled selected>Instrumento</option>
+                        </select>
+                        <select name="EscalaEsquerda" id="escalas_esquerda">
+                            <option value="" disabled selected>Escala</option>
+                        </select>
+                    </div>
+
+                    <div id="mao-direita">
+                        <h3>Mão Direita</h3>
+                        <select name="InstrumentoDireita" id="instrumentos_direita">
+                            <option value="" disabled selected>Instrumento</option>
+                        </select>
+                        <select name="EscalaDireita" id="escalas_direita">
+                            <option value="" disabled selected>Escala</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button" id="enviar-criativo">
                     <a href="#">Começar</a>
                 </div>
             </div>
 
             <div class="recreativo">
-                <h1>Lorem.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Hic eveniet nobis nihil quisquam iure?</p>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
+                <h1>Recreativo</h1>
+                <p>No modo recreativo, você poderá tocar músicas pré-definidas organizadas por níveis. Ideal para desenvolver 
+                    coordenação motora e percepção sensorial</p>
+                <select name="modelo" id="a">
+                    <option value="" disabled selected>Nível</option>
                 </select>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
+                <select name="modelo" id="a">
+                    <option value="" disabled selected>Música</option>
                 </select>
-                <select name="modelo" id="modelo">
-                    <option value="" disabled selected>Selecione um modelo...</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="hatch">Hatch</option>
-                    <option value="suv">SUV</option>
-                </select>
-                <div class="button" id="criativo">
+                <div class="button" id="a">
                     <a href="#">Começar</a>
                 </div>
             </div>
@@ -203,6 +194,8 @@
     <footer class="container">
        *
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
 
