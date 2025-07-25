@@ -101,7 +101,7 @@ footer {
     top: 0.4em;
     left: 2em;
     width: 5.5em;
-    z-index: 1;
+    z-index: 11;
 
 }
 
@@ -114,7 +114,7 @@ footer {
     align-items: center;
     justify-content: end;
     padding-left: 1.4em;
-    z-index: 10;
+    z-index: 1;
 }
 
 .menu {
@@ -217,7 +217,7 @@ footer {
 }
 
 .sobre-section {
-    height: calc(95vh - 4.5rem);
+    height: calc(100vh - 4.5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,7 +256,7 @@ footer {
     cursor: pointer;
 }
 
-.sobre-section .button p a {
+.sobre-section .button a {
     color: var(--background-color);
     font: var(--body-font);
     font-size: var(--normal-font-size);
@@ -272,11 +272,10 @@ footer {
 }
 
 .caracteristica-section {
-    height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 6em;
+    margin-bottom: 8em;
 }
 
 .caracteristica-section h1 {
@@ -287,16 +286,26 @@ footer {
 
     text-align: center;
     line-height: var(--line-height);
+
+    margin-bottom: 5em;
 }
 
 .caracteristica-section .blocos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
 } 
 
+.caracteristica-section .blocos div i{
+
+    font-size: 6em;
+    margin-bottom: 0.2em;
+
+}
+
 .caracteristica-section .blocos div{
-    width: 20em;
+    width: 18em;
 } 
 
 .caracteristica-section .blocos div h2 {
@@ -306,7 +315,6 @@ footer {
     font-weight: var(--font-semi-bold);
 
     padding-bottom: 1em;
-    text-align: center;
     line-height: var(--line-height);
 }
 
@@ -317,19 +325,17 @@ footer {
     font-weight: var(--font-semi-bold);
 
     padding-bottom: 1em;
-    text-align: center;
     line-height: var(--line-height);
 }
 
-.form-section {
-    height: 80vh;
+.funciona-section {
     background-color: var(--background-color-v);
     display: flex;
     flex-direction: column;
 }
 
-.form-section h1 {
-    margin-top: 4em;
+.funciona-section h1 {
+    margin-top: 5em;
 
     color: var(--text-color);
     font: var(--body-font);
@@ -338,4 +344,59 @@ footer {
 
     text-align: center;
     line-height: var(--line-height);
+    margin-bottom: 5em;
+}
+
+.funciona-section .tutorial {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4em;
+    width: 70%;
+}
+
+.funciona-section .direita {
+    margin-left: auto;
+}
+
+.funciona-section .direita div {
+    align-items: end;
+}
+
+.funciona-section .tutorial img {
+    width: 10%;
+}
+
+.funciona-section .tutorial .logo1 {
+    margin-right: 2em;
+}
+
+
+.funciona-section .tutorial .logo2 {
+    margin-left: 2em;
+}
+
+
+.funciona-section .tutorial .logo3 {
+    margin-right: 2em;
+}
+
+.funciona-section .tutorial div {
+    display: flex;
+    flex-direction: column;
+}
+
+.funciona-section .tutorial div h2{
+    margin-bottom: 1em;
+}
+
+.funciona-section .maos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 6em;
+    margin-bottom: 10em;
+}
+
+.funciona-section .maos img {
+    width: 10%;
 }
