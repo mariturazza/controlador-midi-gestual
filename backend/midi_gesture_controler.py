@@ -11,13 +11,9 @@ from config.config import canais, escalas
 
 def processar_mao_criativo(dedos, velocity, lado, config):
     instrumento_nome = config["instrumento"]
-    print(instrumento_nome)
     escala_nome = config["escala"]
-    print(escala_nome)
     canal = canais[instrumento_nome]
-    print(canal)
     escala = escalas[instrumento_nome][escala_nome]
-    print(escala)
 
     global estado_anterior
 
