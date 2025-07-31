@@ -59,13 +59,9 @@ def processar_mao_criativo(dedos, velocity, lado, config):
         
 def processar_mao_recriativo(dedos, velocity, lado, config):
     instrumento_nome = config["instrumento"]
-    print(instrumento_nome)
     escala_nome = config["escala"]
-    print(escala_nome)
     canal = canais[instrumento_nome]
-    print(canal)
     escala = escalas[instrumento_nome][escala_nome]
-    print(escala)
 
     global estado_anterior
 
@@ -133,9 +129,9 @@ def main():
                             processar_mao_criativo(dedos, velocity, 'left', dados[modo]["Left"])
                     else:
                         if hand_label == 'Right':
-                            processar_mao_recreativo(dedos, velocity, 'right', dados[modo]["Right"])
+                            processar_mao_criativo(dedos, velocity, 'right', dados[modo]["Right"])
                         elif hand_label == 'Left':
-                            processar_mao_recreativo(dedos, velocity, 'left', dados[modo]["Left"])
+                            processar_mao_criativo(dedos, velocity, 'left', dados[modo]["Left"])
                             
             else:
                 send_note_off('right', 0)

@@ -204,13 +204,12 @@ p {
 }
 
 .sobre-section {
-    height: calc(100vh - 4.5rem);
+    height: calc(100vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     margin: 0 12%;
-    margin-bottom: 8em;
 
     z-index: 0;
 }
@@ -290,7 +289,7 @@ p {
     text-align: center;
     line-height: var(--line-height);
 
-    margin-bottom: 5em;
+    margin: 4em 0;
 }
 
 .caracteristica-section .blocos {
@@ -335,7 +334,7 @@ p {
     background-color: var(--background-color-1);
     display: flex;
     flex-direction: column;
-    height: 140vh;
+    height: 100%;
     padding: 0 12%;
 }
 
@@ -352,7 +351,7 @@ p {
 }
 
 .funciona-section .block .text-block {
-    width: calc(46vw - 12vw);
+    width: calc(50vw - 12vw);
 }
 
 .funciona-section .block .text-block h2{
@@ -632,4 +631,10 @@ p {
     font-size: var(--smaller-font-size);
     font-weight: var(--font-small);
     margin: 4em auto 1em auto;
+}
+
+@media (max-width: 1358px) {
+    .background-wrapper{
+        background-image: url('../img/t4.png');
+    }
 }
