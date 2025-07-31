@@ -1,62 +1,87 @@
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("http://localhost:5000/api/form-data")
-        .then(response => response.json())
-        .then(data => {
-        setupSelects("instrumentos_direita", "escalas_direita", data);
-        setupSelects("instrumentos_esquerda", "escalas_esquerda", data);
-        })
-        .catch(err => console.error("Erro ao buscar dados da API:", err));
+document.querySelectorAll('.list').forEach(ul => {
+  ul.addEventListener('click', function (e) {
+    const clickedIcon = e.target.closest('i');
+    if (!clickedIcon) return;
+
+    ul.querySelectorAll('i').forEach(icon => icon.classList.remove('active'));
+
+    clickedIcon.classList.add('active');
+  });
 });
 
-function setupSelects(instrumentosSelectId, escalasSelectId, data) {
-    const instrumentosSelect = document.getElementById(instrumentosSelectId);
-    const escalasSelect = document.getElementById(escalasSelectId);
-    const instrumentos = data.instrumentos;
+document.querySelectorAll('.list-music').forEach(ul => {
+  ul.addEventListener('click', function (e) {
+    const clickedIcon = e.target.closest('h4');
+    if (!clickedIcon) return;
 
-    for (const instrumento in instrumentos) {
-        const option = document.createElement("option");
-        option.value = instrumento;
-        option.textContent = instrumento.charAt(0).toUpperCase() + instrumento.slice(1);
-        instrumentosSelect.appendChild(option);
-    }
+    ul.querySelectorAll('h4').forEach(icon => icon.classList.remove('active'));
 
-    // Atualizar escalas ao mudar o instrumento
-    instrumentosSelect.addEventListener("change", function () {
-        escalasSelect.innerHTML = '<option value="" disabled selected>Escala</option>';
-        const escalas = instrumentos[this.value].escalas;
-
-        for (const escala of escalas) {
-        const option = document.createElement("option");
-        option.value = escala;
-        option.textContent = escala;
-        escalasSelect.appendChild(option);
-        }
+    clickedIcon.classList.add('active');
   });
+});
+
+
+const btnCriativo = document.getElementById("btn-criativo");
+const btnVoltar1 = document.getElementById("voltar1");
+
+const blocoInicial = document.getElementById("bloco-inicial");
+const blocoCriativo = document.getElementById("bloco-criativo");
+
+function fadeOutThenSwitch(hideEl, showEl) {
+
+  hideEl.classList.remove("visible");
+  hideEl.classList.add("hidden");
+
+  setTimeout(() => {
+    hideEl.style.display = "none";
+
+    showEl.style.display = "flex";
+    showEl.classList.remove("visible");
+    showEl.classList.add("hidden");
+
+    setTimeout(() => {
+      showEl.classList.remove("hidden");
+      showEl.classList.add("visible");
+    }, 50);
+  }, 500);
 }
 
-document.getElementById("enviar-criativo").addEventListener("click", () => {
+btnCriativo.addEventListener("click", () => {
+  fadeOutThenSwitch(blocoInicial, blocoCriativo);
+});
 
-    const instrumentoDireita = document.getElementById("instrumentos_direita").value;
-    const escalaDireita = document.getElementById("escalas_direita").value;
-    const instrumentoEsquerda = document.getElementById("instrumentos_esquerda").value;
-    const escalaEsquerda = document.getElementById("escalas_esquerda").value;
+btnVoltar1.addEventListener("click", () => {
+  fadeOutThenSwitch(blocoCriativo, blocoInicial);
+});
 
-    const dadosParaEnviar = {
-        Right: {
-            instrumento: instrumentoDireita,
-            escala: escalaDireita
-        },
-        Left: {
-            instrumento: instrumentoEsquerda,
-            escala: escalaEsquerda
-        }
-    };
+const btnVoltar2 = document.getElementById("voltar2");
 
-    fetch("http://localhost:5000/receber-data", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dadosParaEnviar)
-    })
+const btnRecreativo = document.getElementById("btn-recreativo");
+const blocoRecreativo = document.getElementById("bloco-recreativo");
+
+function fadeOutThenSwitch(hideEl, showEl) {
+
+  hideEl.classList.remove("visible");
+  hideEl.classList.add("hidden");
+
+  setTimeout(() => {
+    hideEl.style.display = "none";
+
+    showEl.style.display = "flex";
+    showEl.classList.remove("visible");
+    showEl.classList.add("hidden");
+
+    setTimeout(() => {
+      showEl.classList.remove("hidden");
+      showEl.classList.add("visible");
+    }, 50); 
+  }, 500);
+}
+
+btnRecreativo.addEventListener("click", () => {
+  fadeOutThenSwitch(blocoInicial, blocoRecreativo);
+});
+
+btnVoltar2.addEventListener("click", () => {
+  fadeOutThenSwitch(blocoRecreativo, blocoInicial);
 });

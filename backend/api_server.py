@@ -7,11 +7,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/api/form-data")
-def form_data():
-    from controller.frontend_data import obter_dados_para_front
-    return jsonify(obter_dados_para_front())
-
 @app.route('/receber-data', methods=['POST'])
 def receber_dados():
     dados = request.get_json()

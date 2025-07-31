@@ -9,13 +9,12 @@
 
     <title>Maestro</title>
 </head>
+
 <body>
     <header>
         <nav class="nav">
             <div class="nav-brand">
-
                 <img class="logo" src="img/logo.png" alt="logo">
-
                 <a href="#" class="brand-title">
                     Maestro
                 </a>
@@ -32,7 +31,7 @@
                         <a href="#form-section">Como funciona</a>
                     </li>
                     <li>
-                        <a href="#">Testar</a>
+                        <a href="#testar">Testar</a>
                     </li>
                 </ul>
             </div>
@@ -49,15 +48,19 @@
 
     <main class="main">
         <section class="sobre-section">
-            <h1>Mais que Música</h1>
-            <p class="text">
-                A ideia do projeto Maestro é realizar a união entre educação, inclusão social e a 
-                música. Pode ser inserido em escolas públicas, 
-                projetos sociais, hospitais e centros de reabilitação, oferecendo experiências 
-                acessíveis e inovadoras de musicoterapia e criatividade.
-            </p>
-            <div class="button" id="caracteristica-section">
-                <a href="#caracteristica-section">Conheça melhor nosso projeto</a>
+            <div class="background-wrapper">
+                <div class="sobre-section-background">
+                    <h1>Mais que Música</h1>
+                    <p class="text">
+                        A ideia do projeto Maestro é realizar a união entre educação, inclusão social e a
+                        música. Pode ser inserido em escolas públicas,
+                        projetos sociais, hospitais e centros de reabilitação, oferecendo experiências
+                        acessíveis e inovadoras de musicoterapia e criatividade.
+                    </p>
+                    <div class="button" id="caracteristica-section">
+                        <a href="#caracteristica-section">Conheça melhor nosso projeto</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -95,107 +98,167 @@
             </div>
         </section>
 
-        <section class="container funciona-section">
-            <h1>Como ele funciona</h1>
-            <div class="tutorial">
-                <img class="logo1" src="img/logo.png" alt="logo">
-                <div>
-                    <h2>Lorem, ipsum dolor.</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laudantium totam dolore a necessitatibus nemo laboriosam
-                        nostrum corrupti quam eius enim!
+        <section class="funciona-section">
+
+            <div class="block">
+                <div class="image-block">
+                    <img class="logo1" src="img/cf1.png" alt="logo">
+                </div>
+                <div class="text-block">
+                    <h2>Como o Programa Funciona</h2>
+                    <p id="testar">
+                        O Maestro oferece dois modos de uso: o Modo Criativo, para explorar sons e escalas livremente com gestos das mãos, e o Modo Recreativo, com músicas pré-definidas organizadas por dificuldade. 
+                        Após escolher o modo, é só configurar os instrumentos ou músicas e começar a tocar. 
+                        A interação por gestos é captada em tempo real, tornando tudo intuitivo e envolvente.
                     </p>
                 </div>
             </div>
-            <div class="tutorial direita">
-                
-                <div>
-                    <h2>Lorem, ipsum dolor.</h2>
+
+            <div class="block block-f visible" id="bloco-inicial" style="display: flex;">
+                <div class="text-block">
+                    <h2>Testar</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laudantium totam dolore a necessitatibus nemo laboriosam
-                        nostrum corrupti quam eius enim!
+                        Agora é a sua vez de experimentar. Escolha um dos modos abaixo para começar: 
+                        liberte sua criatividade no Modo Criativo ou mergulhe em músicas já prontas no Modo Recreativo. 
+                        Use os gestos das mãos e descubra como é fácil e divertido fazer música com o Maestro.
                     </p>
-                </div>
-                <img class="logo2" src="img/logo.png" alt="logo">
-            </div>
-
-            <div class="tutorial">
-                <img class="logo3" src="img/logo.png" alt="logo">
-                <div>
-                    <h2>Lorem, ipsum dolor.</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laudantium totam dolore a necessitatibus nemo laboriosam
-                        nostrum corrupti quam eius enim!
-                    </p>
-                </div>
-            </div>
-            <div class="maos">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-                <img src="img/logo.png" alt="logo">
-            </div>
-        </section>
-
-        <section class="form-section">
-            <div class="criativo">
-                <h1>Criativo</h1>
-                <p>No modo criativo, selecione um instrumento e uma escala para experimentar 
-                    livremente sons e combinações com seus gestos</p>
-                <div class="maos">
-                    <div id="mao-esquerda">
-                        <h3>Mão Esquerda</h3>
-                        <select name="InstrumentoEsquerda" id="instrumentos_esquerda">
-                            <option value="" disabled selected>Instrumento</option>
-                        </select>
-                        <select name="EscalaEsquerda" id="escalas_esquerda">
-                            <option value="" disabled selected>Escala</option>
-                        </select>
-                    </div>
-
-                    <div id="mao-direita">
-                        <h3>Mão Direita</h3>
-                        <select name="InstrumentoDireita" id="instrumentos_direita">
-                            <option value="" disabled selected>Instrumento</option>
-                        </select>
-                        <select name="EscalaDireita" id="escalas_direita">
-                            <option value="" disabled selected>Escala</option>
-                        </select>
+                    <div class="buttons-block-s">
+                        <div class="buttons">
+                            <button class="button" id="btn-criativo">Modo Criativo</button>
+                        </div>
+                        <div class="buttons">
+                            <button class="button" id="btn-recreativo">Modo Recreativo</button>
+                        </div>
                     </div>
                 </div>
-                <div class="button" id="enviar-criativo">
-                    <a href="#">Começar</a>
+                <div class="image-block">
+                    <img class="logo1" src="img/cf2.png" alt="logo">
                 </div>
             </div>
 
-            <div class="recreativo">
-                <h1>Recreativo</h1>
-                <p>No modo recreativo, você poderá tocar músicas pré-definidas organizadas por níveis. Ideal para desenvolver 
-                    coordenação motora e percepção sensorial</p>
-                <select name="modelo" id="a">
-                    <option value="" disabled selected>Nível</option>
-                </select>
-                <select name="modelo" id="a">
-                    <option value="" disabled selected>Música</option>
-                </select>
-                <div class="button" id="a">
-                    <a href="#">Começar</a>
+            <div class="block block-f hidden" id="bloco-criativo" style="display: none;">
+                <div class="text-block">
+                    <h2>Modo Criativo</h2>
+                    <p>
+                        Agora é a sua vez de experimentar. Escolha um dos modos abaixo para começar: 
+                        liberte sua criatividade no Modo Criativo ou mergulhe em músicas já prontas no Modo Recreativo. 
+                        Use os gestos das mãos e descubra como é fácil e divertido fazer música com o Maestro.
+                    </p>
+                    <div class="buttons-block-i">
+                        <div class="buttons">
+                            <button class="button" id="criativo">Iniciar</button>
+                        </div>
+                        <div class="buttons">
+                            <button class="button" id="voltar1">Voltar</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="">
+                    <div class="buttons-block-e">
+                        <div class="dropdown">
+                            <div class="dropdown-content criativo2" id="mao-esquerda">
+                                <img src="img/hand-r.png" alt="">
+                                <h3>Mão esquerda</h3>
+                                <h4>Instrumentos</h4>
+                                <ul class="list instrumentos-esquerda">
+                                    <li><i class="bx bx-coin" id="bateria-esquerda"></i></li>
+                                    <li><i class="bx bxs-guitar-amp" id="guitarra-esquerda"></i></li>
+                                    <li><i class="bx bxs-piano" id="teclado-esquerda"></i></li>
+                                </ul>
+                                <h4>Escalas</h4>
+                                <ul class="list escalas-esquerda">
+                                    <li><i class="bx bx-dice-1" id="1-esquerda"></i></li>
+                                    <li><i class="bx bx-dice-2" id="2-esquerda"></i></li>
+                                    <li><i class="bx bx-dice-3" id="3-esquerda"></i></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-content criativo1" id="mao-direita">
+                                <img src="img/hand-l.png" alt="">
+                                <h3>Mão direita</h3>
+                                <h4>Instrumentos</h4>
+                                <ul class="list instrumentos-direita">
+                                    <li><i class="bx bx-coin" id="bateria-direita"></i></li>
+                                    <li><i class="bx bxs-guitar-amp" id="guitarra-direita"></i></li>
+                                    <li><i class="bx bxs-piano" id="teclado-direita"></i></li>
+                                </ul>
+                                <h4>Escalas</h4>
+                                <ul class="list escalas-direita">
+                                    <li><i class="bx bx-dice-1" id="1-direita"></i></li>
+                                    <li><i class="bx bx-dice-2" id="2-direita"></i></li>
+                                    <li><i class="bx bx-dice-3" id="3-direita"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-f hidden" id="bloco-recreativo" style="display: none;">
+                <div class="text-block">
+                    <h2>Modo Recreativo</h2>
+                    <p>
+                        Agora é a sua vez de experimentar. Escolha um dos modos abaixo para começar: 
+                        liberte sua criatividade no Modo Criativo ou mergulhe em músicas já prontas no Modo Recreativo. 
+                        Use os gestos das mãos e descubra como é fácil e divertido fazer música com o Maestro.
+                    </p>
+                    <div class="buttons-block-i">
+                        <div class="buttons">
+                            <button class="button" id="recreativo">Iniciar</button>
+                        </div>
+                        <div class="buttons">
+                            <button class="button" id="voltar2">Voltar</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="">
+                    <div class="buttons-block-e">
+                        <div class="dropdown">
+                            <div class="dropdown-content recreativo-card">
+                                <img src="img/logo.png" alt="">
+                                <h3>Músicas</h3>
+                                <ul class="list-music">
+                                    <li><h4 id="Seven Nation Army">Seven Nation Army</h4></li>
+                                    <li><h4 id="Lorem ipsum">Lorem ipsum</h4></li>
+                                </ul>
+                                <h3>Dificuldade</h3>
+                                <ul class="list dificuldade">
+                                    <li><i class="bx bxs-laugh" id="facil"></i></li>
+                                    <li><i class="bx bxs-meh-alt" id="medio"></i></li>
+                                    <li><i class="bx bx-angry" id="dificil"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="container">
-       *
+       <div class="footer-block">
+           <div class="footer-title">
+               <h1>Maestro</h1>
+           </div>
+           <div class="links">
+            <h2>Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#caracteristica-section">Motivação</a></li>
+                    <li><a href="#form-section">Como funciona</a></li>
+                    <li><a href="#testar">Testar</a></li>
+                    <li><a href="https://github.com/mariturazza/controlador-midi-gestual" target="_blank">Github</a></li>
+                </ul>
+           </div>
+       </div>
+       <div class="footer-block">
+            <span>©2025 Maestro. All Rights Reserved.</span>
+       </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/info.js"></script>
 </body>
 </html>
 

@@ -4,29 +4,6 @@
 MIDI_PORT_NAME = "loopMIDI Port 1"
 BPM = 186
 
-app_data_criativo = {
-    "instrumentos": {
-        "bateria": {
-            "escalas": [
-                "bateria 1",
-                "bateria 2"
-            ]
-        },
-        "teclado" : {
-            "escalas": [
-                "pentatonica maior de DO",
-                "escala maior de DO"
-            ]
-        },
-        "guitarra" : {
-            "escalas": [
-                "pentatonica maior de DO", 
-                "escala maior de DO"
-            ]
-        }
-    }
-}
-
 canais = {
     "bateria": 0,
     "teclado": 1,
@@ -34,10 +11,19 @@ canais = {
 }
 
 escalas = {
-    "bateria 1": [36, 42, 38, 46, 43, 45, 49],
-    "bateria 2": [36, 42, 38, 46, 43, 45, 49],
-    "pentatonica maior de DO": [60, 62, 64, 67, 69, 72, 74],
-    "escala maior de DO": [60, 62, 64, 65, 67, 69, 71, 72],
-    "pentatonica maior de DO": [60, 62, 64, 67, 69, 72, 74],
-    "escala maior de DO": [60, 62, 64, 65, 67, 69, 71, 72]
-}
+    "bateria": {
+        "1": [36, 42, 38, 46, 43, 45, 49],
+        "2": [36, 42, 38, 46, 43, 45, 49],
+        "3": [36, 42, 38, 46, 43, 45, 49]
+    },
+    "teclado": {
+        "1": [60, 62, 64, 67, 69, 72, 74], #pentatonica de do
+        "2": [60, 62, 64, 65, 67, 69, 71, 72], #maior de do
+        "3": [60, 62, 64, 65, 67, 69, 71, 72]
+    },
+    "guitarra": {
+        "1": [60, 62, 64, 67, 69, 72, 74],
+        "2": [60, 62, 64, 65, 67, 69, 71, 72],
+        "3": [60, 62, 64, 65, 67, 69, 71, 72]
+    }
+};
