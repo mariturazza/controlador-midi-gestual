@@ -7,7 +7,7 @@ from hand.detection import detectar_dedos, altura_mao
 
 from controller.midi_controller import send_note_on, send_note_off, close_midi
 from controller.loops import start_loop, stop_loop
-from config.config import canais, escalas
+from config.config import canais, escalas, musicas
 
 def processar_mao_criativo(dedos, velocity, lado, config):
     instrumento_nome = config["instrumento"]
@@ -53,7 +53,7 @@ def processar_mao_criativo(dedos, velocity, lado, config):
         send_note_off(lado, canal)
         stop_loop(lado.capitalize())
         
-def processar_mao_recriativo(dedos, velocity, lado, config):
+def processar_mao_recreativo_dificil(dedos, velocity, lado, config):
     instrumento_nome = config["instrumento"]
     escala_nome = config["escala"]
     canal = canais[instrumento_nome]
@@ -96,6 +96,35 @@ def processar_mao_recriativo(dedos, velocity, lado, config):
                 return
         send_note_off(lado, canal)
         stop_loop(lado.capitalize())
+        
+def processar_mao_recreativo(dedos, velocity, lado, config):
+    instrumento_nome = config["instrumento"]
+    escala_nome = config["escala"]
+    canal = canais[instrumento_nome]
+    escala = escalas[instrumento_nome][escala_nome]
+
+    global estado_anterior
+
+    dedos_tuple = tuple(dedos)
+
+    if dedos_tuple != estado_anterior[lado]:
+        estado_anterior[lado] = dedos_tuple
+
+        if dedos_tuple == (1, 0, 0, 0, 1):
+            if instrumento_nome == 'bateria':
+                start_loop(lado, 'drum', velocity, canal)
+            else:
+                start_loop(lado, 'bass', velocity, canal)
+            return
+
+        # === Gesto para parar loop ===
+        if dedos_tuple == (1, 1, 1, 1, 0):  # exemplo de gesto para parar
+            stop_loop(lado)
+            send_note_off(lado, canal)
+            return
+
+        send_note_off(lado, canal)
+        stop_loop(lado.capitalize())
 
 def main():
     cap = cv2.VideoCapture(0)
@@ -124,10 +153,15 @@ def main():
                         elif hand_label == 'Left':
                             processar_mao_criativo(dedos, velocity, 'left', dados[modo]["Left"])
                     else:
+                        
+                        #{"recreativo": {"musica": "Seven Nation Army", "dificuldade": "dificil"}}
+                        
+                        faixa = musicas[dados['recreativo']['musica']]                    
+                        
                         if hand_label == 'Right':
-                            processar_mao_criativo(dedos, velocity, 'right', dados[modo]["Right"])
+                            processar_mao_recreativo_dificil(dedos, velocity, 'right', faixa["Right"])
                         elif hand_label == 'Left':
-                            processar_mao_criativo(dedos, velocity, 'left', dados[modo]["Left"])
+                            processar_mao_recreativo_dificil(dedos, velocity, 'left', faixa["Left"])
                             
             else:
                 send_note_off('right', 0)

@@ -14,7 +14,8 @@ escalas = {
     "bateria": {
         "1": [36, 42, 38, 46, 43, 45, 49],
         "2": [36, 42, 38, 46, 43, 45, 49],
-        "3": [36, 42, 38, 46, 43, 45, 49]
+        "3": [36, 42, 38, 46, 43, 45, 49],
+        "Seven Nation Army": [36, 0, 0, 0, 0, 0, 0]
     },
     "teclado": {
         "1": [60, 62, 64, 67, 69, 72, 74], #pentatonica de do
@@ -24,6 +25,16 @@ escalas = {
     "guitarra": {
         "1": [60, 62, 64, 67, 69, 72, 74],
         "2": [60, 62, 64, 65, 67, 69, 71, 72],
-        "3": [60, 62, 64, 65, 67, 69, 71, 72]
+        "3": [60, 62, 64, 65, 67, 69, 71, 72],
+        "Seven Nation Army": [67, 64, 62, 60, 59, 0, 0]
     }
 };
+
+musicas = {
+    "Seven Nation Army": {
+        "Right": 
+            {"instrumento": "bateria", "escala": "Seven Nation Army"}, 
+        "Left": 
+            {"instrumento": "guitarra", "escala": "Seven Nation Army"}
+        }
+}
