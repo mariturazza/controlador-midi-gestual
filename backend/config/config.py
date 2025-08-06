@@ -2,7 +2,6 @@
 #    'SOL': 67, 'LA': 69, 'SI': 71, 'DO_8': 72
 
 MIDI_PORT_NAME = "loopMIDI Port 1"
-BPM = 186
 
 canais = {
     "bateria": 0,
@@ -32,9 +31,23 @@ escalas = {
 
 musicas = {
     "Seven Nation Army": {
-        "Right": 
-            {"instrumento": "bateria", "escala": "Seven Nation Army"}, 
-        "Left": 
-            {"instrumento": "guitarra", "escala": "Seven Nation Army"}
+        "facil": {
+            "Right": 
+                {"instrumento": "bateria", "loop": "Seven Nation Army Drum"}, 
+            "Left": 
+                {"instrumento": "guitarra", "loop": "Seven Nation Army Bass"}
+        },
+        "medio": {
+            "Right": 
+                {"instrumento": "bateria", "loop": "Seven Nation Army Drum"}, 
+            "Left": 
+                {"instrumento": "guitarra", "escala": "Seven Nation Army"}
+        },
+        "dificil": {
+           "Right": 
+                {"instrumento": "bateria", "escala": "Seven Nation Army"}, 
+            "Left": 
+                {"instrumento": "guitarra", "escala": "Seven Nation Army"} 
         }
+    }
 }

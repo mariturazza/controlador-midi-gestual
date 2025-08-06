@@ -15,7 +15,7 @@ def receber_dados():
         json.dump(dados, f)
 
     resultado = subprocess.run(
-        ['C:\\Users\\yuriy\\Documents\\Maestro\\Maestro\\.venv\\Scripts\\python.exe', 'midi_gesture_controler.py'],
+        ['C:\\Users\\yuriy\\Desktop\\Gesto\\Maestro\\.venv\\Scripts\\python.exe', 'midi_gesture_controler.py'],
         capture_output=True,
         text=True,
         check=True
