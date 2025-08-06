@@ -1,35 +1,13 @@
-# Bytecode Python
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Ambientes virtuais
-venv/
+.venv/
 .env/
-.envrc
 
-# Config do VS Code
 .vscode/
 
-# Arquivos de log
-*.log
-
-# Cache
 *.cache
 *.pyc
 
-# Config temporária
-.DS_Store
-Thumbs.db
-
-# Arquivos de build
-build/
-dist/
-*.egg-info/
-
-# PyInstaller
-*.spec
-
-# IDEs
-.idea/
-*.swp
+dados.json
