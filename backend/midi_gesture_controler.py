@@ -36,7 +36,7 @@ def main():
                     
                     elif modo == 'recreativo':    
                         faixa = musicas[dados['recreativo']['musica']]                    
-                        dificuldade = dados['recreativo']['dificuldade'] 
+                        dificuldade = dados['recreativo']['dificuldade']      
                         
                         if dificuldade == 'facil':
                             if hand_label == 'Right':
@@ -46,7 +46,7 @@ def main():
                             
                         elif dificuldade == 'medio':
                             if hand_label == 'Right':
-                                processar_mao_recreativo_loop(dedos, velocity, 'right', faixa["medio"]["Right"])
+                                processar_mao_recreativo_loop(dedos, velocity, 'right', faixa["facil"]["Right"])
                             elif hand_label == 'Left':
                                 processar_mao_recreativo_notas(dedos, velocity, 'left', faixa["dificil"]["Left"])
                             

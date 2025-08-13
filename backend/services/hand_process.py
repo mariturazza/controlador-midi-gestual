@@ -10,7 +10,7 @@ def processar_mao_criativo(dedos, velocity, lado, config):
 
     global estado_anterior
 
-    if instrumento_nome == 'bateria':
+    if instrumento_nome == 'bateria' or instrumento_nome == 'guitarra':
         dedos_para_notas = {
             (1, 1, 1, 1, 1): escala[0],
             (0, 1, 1, 1, 1): escala[1],
@@ -47,6 +47,7 @@ def processar_mao_criativo(dedos, velocity, lado, config):
         stop_loop(lado.capitalize())
 
 def processar_mao_recreativo_loop(dedos, velocity, lado, config):
+    
     instrumento_nome = config["instrumento"]
     canal = canais[instrumento_nome]
     loop = config["loop"]
@@ -59,10 +60,8 @@ def processar_mao_recreativo_loop(dedos, velocity, lado, config):
         estado_anterior[lado] = dedos_tuple
 
         if dedos_tuple == (1, 1, 1, 1, 1):
-            if instrumento_nome == 'bateria':
-                start_loop(lado, loop, velocity, canal)
-            else:
-                start_loop(lado, loop, velocity, canal)
+            
+            start_loop(lado, loop, velocity, canal)
             return
 
         if dedos_tuple == (1, 1, 1, 1, 0):
@@ -81,7 +80,7 @@ def processar_mao_recreativo_notas(dedos, velocity, lado, config):
 
     global estado_anterior
 
-    if instrumento_nome == 'bateria':
+    if instrumento_nome == 'bateria' or instrumento_nome == 'guitarra':
         dedos_para_notas = {
             (1, 1, 1, 1, 1): escala[0],
             (0, 1, 1, 1, 1): escala[1],
