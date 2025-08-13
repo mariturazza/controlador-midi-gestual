@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --header-height: 4.5em;
-
-    --first-text-color: #23227A;
-    --second-text-color: hsl(0, 0%, 8%);
-    --third-text-color:  hsl(0, 0%, 30%);
-
-    --background-color: #ffffff;
-    --background-color-v: #f7f7f7;
-    --background-color-contrast:hsl(0, 0%, 8%);
+    --background-color-0: hsl(0, 0%, 8%);
+    --background-color-1: #f1f1f1;
+    --background-color-2: #CECFD1;
+    --background-color-3: #7f48ff;
 
     /*========== Font and typography ==========*/
     --body-font: 'Raleway', 'Roboto', sans-serif;
-    --biggest-font-size: 3rem;
+    --biggest-font-size: 5rem;
     --h1-biggest-font-size: 2rem;
     --h1-font-size: 1.85rem;
     --h2-font-size: 1.25rem;
@@ -26,7 +21,7 @@
     --font-small: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
-    --font-bold: 800;
+    --font-bold: 700;
 
     --line-height: 1.6;
 
@@ -44,10 +39,11 @@
 
 html {
   scroll-behavior: smooth;
+  letter-spacing: 1px;
 }
 
 body {
-    background-color: white;
+    background-color: var(--background-color-1);
 }
 
 ul {
@@ -60,32 +56,38 @@ a{
 
 button {
     text-decoration: none;
-
-}
-
-header {
-    height: var(--header-height);
 }
 
 footer {
-    background-color: var(--background-footer-color);
+    background-color: var(--background-color-0);
 }
 
+p {
+    line-height: var(--line-height);
+}
+
+
+
 .container {
-    padding: 0 8em;
+    padding: 0 12%;
 }
 
 .nav {
     display: flex;
     flex-direction: row;
     position: fixed;
-    width: 100%;
     justify-content: space-between;
-    padding: 2em 2em;
 
-    background-color: rgba(255, 255, 255, 0.479);
+    width: calc(100% - 2em);
+    margin: 0 1em;
+    height: 5em;
+
+    background-color: #f1f1f150;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 32px;
+    z-index: 111;
 }
 
 .nav-brand {
@@ -93,28 +95,30 @@ footer {
     flex: row;
     align-items: center;
     justify-content: center;
+    padding: 1em;
+    margin-left: 4em;
 }
 
 .nav-brand .logo {
-
     position: fixed;
-    top: 0.4em;
     left: 2em;
     width: 5.5em;
-    z-index: 1;
-
+    z-index: 11;
+    padding: 1em;
 }
 
 .brand-title {
-    color: var(--second-text-color);
+    color: var(--background-color-0);
     font-size: var(--h1-font-size);
     font-weight: var(--font-bold);
-    letter-spacing: 0.2px;
     display: flex;
     align-items: center;
     justify-content: end;
-    padding-left: 1.4em;
-    z-index: 10;
+    z-index: 1;
+}
+
+.nav-menu {
+    padding: 1em;
 }
 
 .menu {
@@ -130,20 +134,22 @@ footer {
 }
 
 .menu li a {
-    color: var(--second-text-color);
+    color: var(--background-color-0);
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
     transition: 0.3s;
 }
 
 .menu li a:hover {
-    color: var(--first-text-color);
+    color: var(--background-color-3);
     transition: 0.3s;
 }
 
 .nav-git {
     display: flex;
     justify-content: end;
+    padding: 1em;
+    margin-right: 2em;
 }
 
 .git{
@@ -157,12 +163,12 @@ footer {
     justify-content: right;
     font-size: var(--h1-font-size);
     margin-right: 0.2em;
-    color: var(--first-text-color);
+    color: var(--background-color-0);
     transition: 0.5s;
 }
 
 .git-logo:hover {
-    color: var(--second-text-color);
+    color: var(--background-color-3);
     transition: 0.5s;
 }
 
@@ -179,7 +185,7 @@ footer {
     display: flex;
     justify-content: left;
     align-items: center;
-    color: var(--first-text-color);
+    color: var(--background-color-0);
     font-size: var(--small-font-size);
     font-weight: var(--font-semi-bold);
     margin-bottom: 1px;
@@ -187,26 +193,7 @@ footer {
 }
 
 .url:hover {
-    color: var(--second-text-color);
-    transition: 0.5s;
-}
-
-.git-stats {
-    display: inline-flex;
-    color: var(--text-color);
-    align-items: center;
-    font-size: var(--smaller-font-size);
-    font-weight: 400;
-    margin-top: 1px;
-}
-
-.git-stats i {
-    margin-right: 0.2rem;
-    transition: 0.5s;
-}
-
-.git-stats:hover {
-    color: var(--second-color);
+    color: var(--background-color-3);
     transition: 0.5s;
 }
 
@@ -217,47 +204,61 @@ footer {
 }
 
 .sobre-section {
-    height: calc(95vh - 4.5rem);
+    height: calc(100vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background-image: url('../img/back1.png');
-    background-size: cover;
-    background-position: center;
+    margin: 0 12%;
 
-    margin: 0 8em;
+    z-index: 0;
+}
+.background-wrapper {
+    background-image: url('../img/back1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-section-background {
+    border-radius: 32px;
+    width: 40%;
 }
 
 .sobre-section h1 {
-    color: var(--second-text-color);
+    color: var(--background-color-0);
     font: var(--body-font);
-    font-size: var(--h1-biggest-font-size);
-    font-weight: var(--font-semi-bold);
-
-    padding: 0em 0 1em 0;
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    
+    padding: 0em 0 0.2em 0;
 }
 
 .sobre-section .text {
-    color: var(--third-text-color);
+    color: var(--background-color-0);
     font: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
 
     padding: 0 0 2em 0;
-    width: 40em;
     line-height: var(--line-height);
 }
 
 .sobre-section .button {
-    background-color: var(--first-text-color);
+    background-color: var(--background-color-3);
     width: 20em;
     border-radius: 2em;
     cursor: pointer;
 }
 
-.sobre-section .button p a {
-    color: var(--background-color);
+.sobre-section .button a {
+    color: var(--background-color-1);
     font: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
@@ -272,70 +273,367 @@ footer {
 }
 
 .caracteristica-section {
-    height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 6em;
+    margin-bottom: 7em;
 }
 
 .caracteristica-section h1 {
-    color: var(--second-text-color);
+    color: var(--background-color-0);
     font: var(--body-font);
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
 
     text-align: center;
     line-height: var(--line-height);
+
+    margin: 4em 0;
 }
 
 .caracteristica-section .blocos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
 } 
 
+.caracteristica-section .blocos div i{
+
+    font-size: 6em;
+    margin-bottom: 0.2em;
+
+}
+
 .caracteristica-section .blocos div{
-    width: 20em;
+    width: 18em;
 } 
 
 .caracteristica-section .blocos div h2 {
-    color: var(--second-text-color);
+    color: var(--background-color-0);
     font: var(--body-font);
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
 
     padding-bottom: 1em;
-    text-align: center;
     line-height: var(--line-height);
 }
 
 .caracteristica-section .blocos div p {
-    color: var(--third-text-color);
+    color: var(--background-color-0);
     font: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
 
     padding-bottom: 1em;
-    text-align: center;
     line-height: var(--line-height);
 }
 
-.form-section {
-    height: 80vh;
-    background-color: var(--background-color-v);
+.funciona-section {
+    background-color: var(--background-color-1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 12%;
+}
+
+.funciona-section .block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6em;
+}
+
+.funciona-section .block .image-block img {
+    width: calc(40vw - 12vw);
+}
+
+.funciona-section .block .text-block {
+    width: calc(50vw - 12vw);
+}
+
+.funciona-section .block .text-block h2{
+    color: var(--background-color-0);
+    font: var(--body-font);
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+
+    margin-bottom: 0.5em;
+}
+
+.funciona-section .block .text-block p{
+    color: var(--background-color-0);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    line-height: var(--line-height);
+
+    width: 80%;
+    margin-bottom: 2em;
+}
+
+/* Estilo básico para os botões */
+.text-block .buttons-block-s {
+    display: flex;
+    gap: 1.5em;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.text-block .buttons {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 40%;
+}
+
+.text-block .button {
+    background-color: var(--background-color-3);
+    color: var(--background-color-1);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    height: 100%;
+    width: 100%;
+    padding: 1em 3em;
+    border: none;
+    cursor: pointer;
+    border-radius: 32px;
+}
+
+.buttons-block-e {
+    width: calc(50vw - 12vw);
+}
+
+.dropdown {
+    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    gap: 1.5em;
+    width: 100%;
+}
+
+.dropdown-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+
+    box-shadow: 5px 5px 20px #7f48ff7a;
+    background-color: var(--background-color-0);
+
+    padding: 0 2em;
+    border-radius: 32px;
+    text-align: center;
+    width: 50%;
+    overflow: hidden;
+}
+
+.dropdown-content img {
+    height: 20%;
+    object-fit: contain;
+    margin-bottom: 1.2em;
+    z-index: 1;
+}
+
+.dropdown-content h3 {
+    margin-bottom: 1em;
+    color: var(--background-color-1);
+    font: var(--body-font);
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    z-index: 1;
+}
+
+.dropdown-content h4 {
+    background-color: var(--background-color-1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px); 
+
+    margin: 0em 1em 1.4em 1em;
+    padding: 0.8em 1em 0.8em 1em;
+
+    border-radius: 32px;
+    color: var(--background-color-3);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-bold);
+    z-index: 1;
+    
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.dropdown-content .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dropdown-content .list li i {
+    font-size: var(--h2-font-size);
+    color: var(--background-color-3);
+    background-color: var(--background-color-1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.dropdown-content .list li i:hover {
+    color: var(--background-color-1);
+    transition: 0.5s ease;
+}
+
+.dropdown-content .list li .active {
+    font-size: var(--h2-font-size);
+    color: var(--background-color-1);
+    background-color: var(--background-color-3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-bottom: 0.8em;
+
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.text-block .buttons-block-i {
+    display: flex;
+    gap: 1.5em;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.block-f {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.block.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.block.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dropdown-content .list-music {
     display: flex;
     flex-direction: column;
 }
 
-.form-section h1 {
-    margin-top: 4em;
+.list-music h4 {
+    background-color: var(--background-color-1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px); 
 
-    color: var(--text-color);
+    margin: 0em 1em 1em 1em;
+    padding: 0.8em 1em 0.8em 1em;
+
+    border-radius: 32px;
+    color: var(--background-color-3);
+    font: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-bold);
+    z-index: 1;
+    
+    text-align: center;
+    cursor: pointer;
+
+    transition: 0.5s ease;
+}
+
+.list-music h4:hover {
+    color: var(--background-color-1);
+    transition: 0.5s ease;
+}
+
+.list-music .active {
+    color: var(--background-color-1);
+    background-color: var(--background-color-3);
+    transition: 0.5s ease;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5em 0;
+    
+}
+
+.footer-block h1 {
+    margin: 2em 0 0 0;
+    color: var(--background-color-1);
+    font: var(--body-font);
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    
+    padding: 0em 0 0.2em 0;
+}
+
+.footer-block .links {
+    margin-top: 4.3em;
+}
+
+.footer-block h2 {
+    margin: 0.5em 0;
+    color: var(--background-color-1);
     font: var(--body-font);
     font-size: var(--h1-font-size);
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-bold);
+}
 
-    text-align: center;
-    line-height: var(--line-height);
+.footer-block li {
+    margin-top: 0.2em;
+}
+
+.footer-block a {
+    color: var(--background-color-2);
+    font: var(--body-font);
+    font-size: var(--small-font-sizeize);
+    font-weight: var(--font-small);
+    transition: 0.5s ease;
+}
+
+.footer-block a:hover {
+    color: var(--background-color-1);
+    font: var(--body-font);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-small);
+
+    transition: 0.5s ease;
+}
+
+.footer-block span {
+    color: var(--background-color-1);
+    font: var(--body-font);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-small);
+    margin: 4em auto 1em auto;
+}
+
+@media (max-width: 1358px) {
+    .background-wrapper{
+        background-image: url('../img/t4.png');
+    }
 }
